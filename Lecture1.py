@@ -1,3 +1,6 @@
+import re
+import math
+
 print("This program allows you to calculate the following:\n a) Area of a circle \n b) Perimeter of a circle \n c) Area of an ellipse \n d) Volume of a cylinder \n e) Square footage of a given house \n f) Conversion of Fahrenheit into Celsius and vice versa")
 
 while True:
