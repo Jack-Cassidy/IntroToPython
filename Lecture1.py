@@ -4,7 +4,7 @@ import math
 print("This program allows you to calculate the following:\n a) Area of a circle \n b) Perimeter of a circle \n c) Area of an ellipse \n d) Volume of a cylinder \n e) Square footage of a given house \n f) Conversion of Fahrenheit into Celsius and vice versa")
 
 while True:
-    calc = input("Please select an option from 'a' to 'f': ")
+    calc = input("Please select an option from 'a' to 'f': ").lower()
     if calc.lower() not in ('a', 'b', 'c', 'd','e','f'):
         print('You have selected an invalid option. Please try again.')
     else:
