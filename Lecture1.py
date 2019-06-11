@@ -5,7 +5,7 @@ print("This program allows you to calculate the following:\n a) Area of a circle
 
 while True:
     calc = input("Please select an option from 'a' to 'f': ").lower()
-    if calc.lower() not in ('a', 'b', 'c', 'd','e','f'):
+    if calc not in ('a', 'b', 'c', 'd','e','f'):
         print('You have selected an invalid option. Please try again.')
     else:
         break
