@@ -145,8 +145,8 @@ elif calc == 'e':
     
 elif calc == 'f':
     while True:
-        metric = input("Are you: [a/b] \n a) Converting from Celsius to Fahrenheit \n b) Converting from Fahrenheit to Celsius \n ")
-        if metric.lower() not in ('a', 'b'):
+        metric = input("Are you: [a/b] \n a) Converting from Celsius to Fahrenheit \n b) Converting from Fahrenheit to Celsius \n ").lower()
+        if metric not in ('a', 'b'):
             print('You have selected an invalid option. Please try again.')
         else:
             break
