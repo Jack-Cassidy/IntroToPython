@@ -1,0 +1,12 @@
+def coin_toss(tosses):
+    
+    possibilities = ["H", "T"]
+    outcomes = []
+    
+    for i in range(tosses):
+        outcome = r.choice(possibilities)
+        outcomes.append(outcome)     
+    
+    print(outcomes)
+    
+coin_toss(100)
