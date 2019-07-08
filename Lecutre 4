@@ -1,14 +1,32 @@
 def on_menu():
     user_input = input("Check if your order is on the menu: ")
-    print(user_input)
+    #print(user_input)
     sandwiches = []
-    with open("S:\Teesside\Commercial\Analysis\menu.txt", mode='r') as my_file:
+    with open(r"C:\Users\Jack\Documents\Python Scripts\menu.txt", mode='r') as my_file:
         for item in my_file:
-            sandwiches.append(item.rstrip("\n"))
-    print(sandwiches)
+            sandwiches.append(item.rstrip("\n").lower())
+    #print(sandwiches)
     if user_input in sandwiches:
-        print("Yes")
+        print("Your selection is on the menu.")
     else:
-        print("No")
+        print("Your selection is not on the menu.")
+    for item in sandwiches:
+        if user_input not in sandwiches and user_input in item:
+            print('A sandwich similar to your request is ' +item.capitalize())
 on_menu()
-        
+
+def car_database():
+    my_list = []
+    with open(r"C:\Users\Jack\Documents\Python Scripts\cars.txt", mode='r') as my_file:
+        for item in my_file:
+            my_list.append(item.rstrip("\n"))
+    car1 = {'make':my_list[0], 'model':my_list[1], 'year':my_list[2]}
+    car2 = {'make':my_list[3], 'model':my_list[4], 'year':my_list[5]}
+    car3 = {'make':my_list[6], 'model':my_list[7], 'year':my_list[8]}
+    cars = [car1, car2, car3]
+    print(cars)
+    for x in cars:
+        print(['make'])
+    newlist = sorted(cars, key=lambda k: k['year'])  
+    print('Oldest car: ',newlist[0],'\nNewest car: ',newlist[len(newlist)-1])
+car_database()
