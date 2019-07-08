@@ -1,0 +1,14 @@
+def on_menu():
+    user_input = input("Check if your order is on the menu: ")
+    print(user_input)
+    sandwiches = []
+    with open("S:\Teesside\Commercial\Analysis\menu.txt", mode='r') as my_file:
+        for item in my_file:
+            sandwiches.append(item.rstrip("\n"))
+    print(sandwiches)
+    if user_input in sandwiches:
+        print("Yes")
+    else:
+        print("No")
+on_menu()
+        
