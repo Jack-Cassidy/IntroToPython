@@ -82,22 +82,23 @@ remove_years("cars2.txt")
 
 #Question 6: Moving the Years
 
-def move_years():
+def move_years(filename):
     
     cars = []
     moved_list = []
     
-    with open(r"S:\Teesside\Commercial\Analysis\cars.txt", mode='r') as my_file:
+    with open(r"C:\Users\Jack\Documents\Python Scripts\cars.txt", mode='r') as my_file:
         for item in my_file:
             cars.append(item.rstrip("\n"))
-        for i in range(len(cars)):
-            #print(i)
-            if (i+1)%2 == 0:
-                moved_list.append(cars[i-1]+'_'+cars[i])
-        print(moved_list)
+        i = 0
+        while i <= len(cars)-2:
+            moved_list.append(cars[i])
+            moved_list.append(cars[i+2]+' '+cars[i+1])
+            i += 3
+        #print(moved_list)
     
-    #with open(fname, mode = "w") as new_file:
-        #for x in no_years:
-            #new_file.write(x + "\n")
+    with open(filename, mode = "w") as new_file:
+        for x in moved_list:
+            new_file.write(x + "\n")
     
-move_years()
+move_years('cars3.txt')
