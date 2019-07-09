@@ -1,8 +1,10 @@
+#Questions 1 & 2: Sandwich Menu/Smart Sandwich Menu
+
 def on_menu():
     user_input = input("Check if your order is on the menu: ")
     #print(user_input)
     sandwiches = []
-    with open(r"C:\Users\Jack\Documents\Python Scripts\menu.txt", mode='r') as my_file:
+    with open(r"S:\Teesside\Commercial\Analysis\menu.txt", mode='r') as my_file:
         for item in my_file:
             sandwiches.append(item.rstrip("\n").lower())
     #print(sandwiches)
@@ -15,18 +17,87 @@ def on_menu():
             print('A sandwich similar to your request is ' +item.capitalize())
 on_menu()
 
+#Question 3: Loading Cars
+
 def car_database():
     my_list = []
-    with open(r"C:\Users\Jack\Documents\Python Scripts\cars.txt", mode='r') as my_file:
+    cars = []
+    with open(r"S:\Teesside\Commercial\Analysis\cars.txt", mode='r') as my_file:
         for item in my_file:
             my_list.append(item.rstrip("\n"))
-    car1 = {'make':my_list[0], 'model':my_list[1], 'year':my_list[2]}
-    car2 = {'make':my_list[3], 'model':my_list[4], 'year':my_list[5]}
-    car3 = {'make':my_list[6], 'model':my_list[7], 'year':my_list[8]}
-    cars = [car1, car2, car3]
+        for i in range(len(my_list)):
+            if i%3 == 0:
+                cars.append({'make':my_list[i], 'model':my_list[i+1], 'year':my_list[i+2]})
+                
     print(cars)
-    for x in cars:
-        print(['make'])
-    newlist = sorted(cars, key=lambda k: k['year'])  
-    print('Oldest car: ',newlist[0],'\nNewest car: ',newlist[len(newlist)-1])
+    print(cars[1]['make'], cars[1]['model'])
+    sorted_cars = sorted(cars, key=lambda k: k['year'])  
+    print('Oldest car: ',sorted_cars[0],'\nNewest car: ',sorted_cars[len(sorted_cars)-1])
 car_database()
+
+#Question 4: Splitting the Car Database
+#Could write this as a totally new function without code repeated from previous function.
+
+def split_database():
+    
+    my_list = []
+    cars = []
+    
+    with open(r"S:\Teesside\Commercial\Analysis\cars.txt", mode='r') as my_file:
+        for item in my_file:
+            my_list.append(item.rstrip("\n"))
+        for i in range(len(my_list)):
+            if i%3 == 0:
+                cars.append({'make':my_list[i], 'model':my_list[i+1], 'year':my_list[i+2]})
+        for i in range(len(cars)):
+            filename = cars[i]['make'] + '_' + cars[i]['model']+ '_' + cars[i]['year']+'.txt'
+            file = open(filename, "w")
+            file.write(cars[i]['make'] +'\n' + cars[i]['model'] +'\n' + cars[i]['year'])
+            file.close()
+            
+split_database()
+
+#Question 5: Removing the Years
+#Should this be done by simply printing only 'make' and 'model' from dictionary? 
+
+def remove_years(filename):
+    
+    cars = []
+    no_years = []
+    
+    with open(r"S:\Teesside\Commercial\Analysis\cars.txt", mode='r') as my_file:
+        for item in my_file:
+            cars.append(item.rstrip("\n"))
+        for i in range(len(cars)):
+            #print(i)
+            if i%3 != 0:
+                no_years.append(cars[i-1])
+        #print(no_years)
+    
+    with open(filename, mode = "w") as new_file:
+        for x in no_years:
+            new_file.write(x + "\n")
+    
+remove_years("cars2.txt")
+
+#Question 6: Moving the Years
+
+def move_years():
+    
+    cars = []
+    moved_list = []
+    
+    with open(r"S:\Teesside\Commercial\Analysis\cars.txt", mode='r') as my_file:
+        for item in my_file:
+            cars.append(item.rstrip("\n"))
+        for i in range(len(cars)):
+            #print(i)
+            if (i+1)%2 == 0:
+                moved_list.append(cars[i-1]+'_'+cars[i])
+        print(moved_list)
+    
+    #with open(fname, mode = "w") as new_file:
+        #for x in no_years:
+            #new_file.write(x + "\n")
+    
+move_years()
