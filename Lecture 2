@@ -64,17 +64,17 @@ while True:
             score = input("You have entered an invalid score. Please try again. ")
         else:
             if score > 79:
-                print("A*")
+                print("You got a grade A*")
             elif score > 69:
-                print ("A")
+                print ("You got a grade A")
             elif score > 59:
-                print("B")
+                print("You got a grade B")
             elif score > 49:
-                print("C")
+                print("You got a grade C")
             elif score > 39:
-                print("D")
+                print("You got a grade D")
             elif score > 1:
-                print("F")
+                print("You got a grade F")
             else:
                 print("N/S")
             break
