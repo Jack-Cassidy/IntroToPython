@@ -131,3 +131,47 @@ while True:
                  break
         else:
             break
+
+
+#Question 8 - Comparing Many Numbers
+
+def comparing_many_numbers():
+    print("This program compares the size of two numbers. Would you like to run the program? [yes/no]")
+    like_to_quit()
+
+def like_to_quit():
+    q = input('Would you like to run the program? [yes/no]')
+    if q == 'yes':
+        compare_two_numbers()
+        #q = input("Would you like to quit? Choosing 'no' will restart the program [yes/no]")
+    elif q == 'no':
+        quit()
+    else:
+        like_to_quit()
+        
+
+def compare_two_numbers():
+    num1 = int(input("Input your first number "))
+    num2 = int(input("Input your second number "))
+
+    if num1 > num2:
+        print(num1,'is larger than',num2,'.')
+    elif num1 < num2:
+        print(num1, 'is smaller than', num2,'.')
+    else:
+        print(num1,'and',num2,'are the same size.')
+    like_to_quit()
+
+comparing_many_numbers()
+
+#Question 9 - Sum of Numbers at Even Indices
+
+values = [14,5,19,20,21,66,89]
+
+total = 0
+
+for x in range(len(values)):
+    if x%2 == 0:
+        total += values[x]
+
+print(total)
