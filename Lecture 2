@@ -78,19 +78,56 @@ while True:
             else:
                 print("N/S")
             break
-            
+ 
+ 
 #Question 6 - Who's that Pokemon? 
 
 while True:
     type = input("Please choose the type of your Pokemon from the following: \n a. Fire \n b. Water \n c. Grass \n d. Electric\n").lower()
     if type not in ("fire", "water","grass","electric"):
         print("You have selected an invalid type. Please try again.")
-    else:
         break
-   
-while True:
-    first_letter = input("Please choose the type of your Pokemon from the following: \n a. Fire \n b. Water \n c. Grass \n d. Electric\n").lower()
-    while first_letter not in ("s","t","c","m","b","o","p","v"):
-        print("No initial found. Would you like to try again")
     else:
-        break
+        first_letter = input("Enter the first letter of your chosen Pokemon: ").lower()
+        if type == 'fire':
+             if first_letter == 'm':
+                 print("Suggestion: Moltres")
+                 break
+             elif first_letter == 'c':
+                 print("Suggestion: Charmander")
+                 break
+             else:
+                 print("No suggestion")
+                 break
+        elif type == 'water':
+             if first_letter == 's':
+                 print("Suggestion: Squirtle")
+                 break
+             elif first_letter == 't':
+                 print("Suggestion: Tentacool")
+                 break
+             else:
+                 print("No suggestion")
+                 break
+        elif type == 'grass':
+             if first_letter == 'b':
+                 print("Suggestion: Bulbasaur")
+                 break
+             elif first_letter == 'o':
+                 print("Suggestion: Oddish")
+                 break
+             else:
+                 print("No suggestion")
+                 break
+        elif type == 'electric':
+             if first_letter == 'p':
+                 print("Suggestion: Pikechu")
+                 break
+             elif first_letter == 'v':
+                 print("Suggestion: Voltorb")
+                 break
+             else:
+                 print("No suggestion")
+                 break
+        else:
+            break
