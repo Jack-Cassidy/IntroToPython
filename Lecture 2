@@ -1,0 +1,96 @@
+#Question 1 - Comparing Numbers
+
+num1 = int(input("Input your first number "))
+num2 = int(input("Input your second number "))
+
+if num1 > num2:
+    print(num1,'is larger than',num2,'.')
+elif num1 < num2:
+    print(num1, 'is smaller than', num2,'.')
+else:
+    print(num1,'and',num2,'are the same size.')
+    
+#Question 2 - Eligible Voters
+
+name = input("Please enter your name. ")
+age = int(input("Please enter your age. "))
+nation = input("Please enter your country of citizenship. ")
+
+if age < 18:
+    print("I'm sorry,",name,"but you are not old enough to vote.")
+elif nation in ("UK", "Britain"):
+    print("Congratulations,",name,"you are eligible to vote.")
+else: 
+    print("I'm sorry, but you are not eligible to vote.")
+    
+#Question 3 - Fizz Buzz
+
+num = int(input("Please enter a number. "))
+if num % 3 == 0 and num % 5 == 0:
+    print("Fizz Buzz!")
+elif num % 3 ==0:
+    print("Fizz!")
+elif num % 5 == 0:
+    print("Buzz!")
+else:
+    print(num)
+    
+    
+#Question 4 - Sorting
+
+first_num = int(input("Enter your first number. "))
+second_num = int(input("Enter your first number. "))
+third_num = int(input("Enter your first number. "))
+
+#numlist = [first_num, second_num, third_num]
+#numlist.sort()
+#print(numlist)
+
+if first_num < second_num and second_num < third_num:
+    print(first_num,second_num,third_num)
+elif first_num > second_num and second_num < third_num:
+    print(third_num, second_num, first_num)
+    
+#Question 5 - Grades
+
+while True:
+    try:
+        score = int(input("Please enter a score from 0-100. "))
+    except ValueError:
+        print("You have entered an invalid value. Please try again. ")
+        continue
+    else:
+        while score < 0 or score > 100:
+            score = input("You have entered an invalid score. Please try again. ")
+        else:
+            if score > 79:
+                print("A*")
+            elif score > 69:
+                print ("A")
+            elif score > 59:
+                print("B")
+            elif score > 49:
+                print("C")
+            elif score > 39:
+                print("D")
+            elif score > 1:
+                print("F")
+            else:
+                print("N/S")
+            break
+            
+#Question 6 - Who's that Pokemon? 
+
+while True:
+    type = input("Please choose the type of your Pokemon from the following: \n a. Fire \n b. Water \n c. Grass \n d. Electric\n").lower()
+    if type not in ("fire", "water","grass","electric"):
+        print("You have selected an invalid type. Please try again.")
+    else:
+        break
+   
+while True:
+    first_letter = input("Please choose the type of your Pokemon from the following: \n a. Fire \n b. Water \n c. Grass \n d. Electric\n").lower()
+    while first_letter not in ("s","t","c","m","b","o","p","v"):
+        print("No initial found. Would you like to try again")
+    else:
+        break
