@@ -175,3 +175,31 @@ for x in range(len(values)):
         total += values[x]
 
 print(total)
+
+#Extension Activity: Bank Consultancy
+
+credit_score = int(input("From 0-10, what is your credit score? "))
+address_term = int(input("How many months have you lived in your property for? "))
+income = int(input("What is your annual income? "))
+loan_amount = int(input("How much money are you seeking to loan? "))
+
+if income == 0 or credit_score == 0 or address_term <12:
+    print("Application rejected.")
+    
+elif loan_amount > income:
+    if loan_amount < 2*income and address_term >= 60 and credit_score >= 5:
+        print("Application approved.")
+    else:
+        print("Application rejected.")
+        
+elif credit_score >= 7 and credit_score <= 10 and address_term >12 and address_term <60 and loan_amount < income:
+    print("Application approved.")
+
+elif credit_score >= 2 and credit_score <= 5 and address_term >= 60 and loan_amount < income:
+    print("Application approved.")
+
+elif credit_score == 1 and address_term > 12 and loan_amount < income*0.2:
+    print("Application approved.")
+    
+else:
+    print("Application rejected.")
